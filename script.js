@@ -81,6 +81,87 @@ function applyPreset(preset) {
             let b = data[i + 2];
             
             switch(preset) {
+                // Presets profesionales para estudio fotográfico
+                case 'studio':
+                    // Retrato profesional
+                    r = Math.min(255, r * 1.08);
+                    g = Math.min(255, g * 1.06);
+                    b = Math.min(255, b * 1.04);
+                    break;
+                    
+                case 'golden':
+                    // Hora dorada - cálido
+                    r = Math.min(255, r * 1.12);
+                    g = Math.min(255, g * 1.08);
+                    b = Math.min(255, b * 0.92);
+                    break;
+                    
+                case 'fresh':
+                    // Limpio y fresco
+                    r = Math.min(255, r * 1.05);
+                    g = Math.min(255, g * 1.05);
+                    b = Math.min(255, b * 1.1);
+                    break;
+                    
+                case 'dreamy':
+                    // Suave y soñador
+                    r = Math.min(255, r * 1.07);
+                    g = Math.min(255, g * 1.05);
+                    b = Math.min(255, b * 1.07);
+                    break;
+                    
+                case 'moody':
+                    // Elegante y dramático
+                    r = Math.min(255, r * 0.95);
+                    g = Math.min(255, g * 0.92);
+                    b = Math.min(255, b * 0.9);
+                    break;
+                    
+                case 'vintage':
+                    // Estilo vintage
+                    r = Math.min(255, r * 1.12);
+                    g = Math.min(255, g * 0.98);
+                    b = Math.min(255, b * 0.88);
+                    break;
+                    
+                case 'bw':
+                    // Blanco y negro clásico
+                    const gray = (r + g + b) / 3;
+                    r = gray;
+                    g = gray;
+                    b = gray;
+                    break;
+                    
+                case 'bwDramatic':
+                    // Blanco y negro dramático
+                    const gray2 = (r * 0.3 + g * 0.59 + b * 0.11);
+                    r = Math.min(255, gray2 * 1.15);
+                    g = Math.min(255, gray2 * 1.15);
+                    b = Math.min(255, gray2 * 1.15);
+                    break;
+                    
+                case 'summer':
+                    // Vibrante veraniego
+                    r = Math.min(255, r * 1.1);
+                    g = Math.min(255, g * 1.12);
+                    b = Math.min(255, b * 0.95);
+                    break;
+                    
+                case 'matte':
+                    // Acabado mate
+                    r = Math.min(255, r * 1.05);
+                    g = Math.min(255, g * 1.05);
+                    b = Math.min(255, b * 1.05);
+                    break;
+                    
+                case 'rose':
+                    // Rose gold
+                    r = Math.min(255, r * 1.1);
+                    g = Math.min(255, g * 1.02);
+                    b = Math.min(255, b * 0.95);
+                    break;
+                    
+                // Mantén los originales por compatibilidad
                 case 'glam':
                     r = Math.min(255, r * 1.1);
                     g = Math.min(255, g * 1.08);
@@ -90,11 +171,6 @@ function applyPreset(preset) {
                     r = Math.min(255, r * 1.05);
                     g = Math.min(255, g * 1.05);
                     b = Math.min(255, b * 1.08);
-                    break;
-                case 'vintage':
-                    r = Math.min(255, r * 1.15);
-                    g = Math.min(255, g * 0.95);
-                    b = Math.min(255, b * 0.85);
                     break;
                 case 'bright':
                     r = Math.min(255, r * 1.2);
