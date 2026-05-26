@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SesiónGlam</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📸 SesiónGlam</h1>
+        <p class="subtitle">Edita y prepara tus fotos para impresión al instante</p>
+
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">📷</div>
+            <p>Haz clic o arrastra una foto</p>
+            <small>Formatos: JPG, PNG (Máx 20MB)</small>
+            <input type="file" id="imageUpload" accept="image/*" hidden>
+        </div>
+
+        <h2>🎨 Presets / Filtros</h2>
+        <div class="presets-grid" id="presetsGrid">
+            <div class="preset-card active" data-preset="original">
+                <div class="preset-name">📸 Original</div>
+                <div class="preset-desc">Sin filtros</div>
+            </div>
+            <div class="preset-card" data-preset="glam">
+                <div class="preset-name">✨ Glamour</div>
+                <div class="preset-desc">Ideal para retratos</div>
+            </div>
+            <div class="preset-card" data-preset="soft">
+                <div class="preset-name">🌸 Soft</div>
+                <div class="preset-desc">Suave y romántico</div>
+            </div>
+            <div class="preset-card" data-preset="vintage">
+                <div class="preset-name">📷 Vintage</div>
+                <div class="preset-desc">Estilo retro</div>
+            </div>
+            <div class="preset-card" data-preset="bright">
+                <div class="preset-name">☀️ Brillante</div>
+                <div class="preset-desc">Alta luminosidad</div>
+            </div>
+            <div class="preset-card" data-preset="warm">
+                <div class="preset-name">🔥 Warm</div>
+                <div class="preset-desc">Tonos cálidos</div>
+            </div>
+        </div>
+
+        <div class="preview-section" id="previewSection" style="display: none;">
+            <canvas id="previewCanvas"></canvas>
+            <div class="button-group">
+                <button class="btn-print" id="printBtn">🖨️ Imprimir</button>
+                <button class="btn-download" id="downloadBtn">💾 Descargar</button>
+                <button class="btn-reset" id="resetBtn">⟳ Resetear</button>
+            </div>
+            <div class="print-info">✅ Listo para imprimir - Alta resolución</div>
+        </div>
+
+        <div class="instructions">
+            <h3>📌 Cómo usar:</h3>
+            <ol>
+                <li>Sube la foto de la familia</li>
+                <li>Selecciona un preset</li>
+                <li>Imprime o descarga la foto</li>
+            </ol>
+            <p class="tip">💡 Los filtros están optimizados para impresión en papel fotográfico</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
